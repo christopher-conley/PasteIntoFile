@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace PasteAsFile
 {
@@ -27,7 +27,7 @@ namespace PasteAsFile
         public frmMain(string location)
         {
             InitializeComponent();
-            this.CurrentLocation = location;
+            CurrentLocation = location;
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -75,7 +75,7 @@ namespace PasteAsFile
             {
 
                 File.WriteAllText(location + filename, txtContent.Text, Encoding.UTF8);
-                this.Text += " : File Saved :)";
+                Text += " : File Saved :)";
             }
             else
             {
@@ -101,7 +101,7 @@ namespace PasteAsFile
                         break;
                 }
 
-                this.Text += " : Image Saved :)";
+                Text += " : Image Saved :)";
             }
 
             Task.Factory.StartNew(() =>

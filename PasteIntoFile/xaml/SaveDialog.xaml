@@ -1,5 +1,5 @@
-﻿<Window x:Name="frmMainX1"
-    x:Class="PasteIntoFile.frmMainX"
+﻿<Window x:Name="WindowSaveDialog"
+    x:Class="PasteIntoFile.SaveDialog"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,13 +7,12 @@
     xmlns:local="clr-namespace:PasteIntoFile"
     mc:Ignorable="d"
     Title="Paste Into File"
-    Icon="/icon.png"
     WindowStartupLocation="CenterScreen"
     HorizontalAlignment="Center"
     VerticalAlignment="Center"
     MinWidth="410"
     MinHeight="244"
-    SizeToContent="WidthAndHeight" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True" BorderThickness="4,0,2,6" >
+    SizeToContent="WidthAndHeight" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True" BorderThickness="4,0,2,6" Icon="/resources/icon.png" >
     <Window.Resources>
         <Color x:Key="TitlebarColor">#FF99B4D1</Color>
         <Color x:Key="GridColor">#FFF0F0F0</Color>
@@ -27,7 +26,17 @@
 
     <Grid
         Background="#FFF0F0F0" >
-
+        <Menu Height="20" VerticalAlignment="Top"  FontSize="11" FontFamily="Tahoma">
+            <MenuItem x:Name="MenuFile" Header="File" GotFocus="MenuFile_GotFocus" LostFocus="MenuFile_LostFocus">
+                <MenuItem x:Name="MenuExit" Header="Exit"/>
+            </MenuItem>
+            <MenuItem x:Name="MenuEdit" Header="Edit">
+                <MenuItem x:Name="MenuPreferences" Header="Preferences"/>
+            </MenuItem>
+            <MenuItem x:Name="MenuHelp" Header="Help">
+                <MenuItem x:Name="MenuAbout" Header="About"/>
+            </MenuItem>
+        </Menu>
         <Label
             x:Name="lblFileName"
             FontSize="11"
